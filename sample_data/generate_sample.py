@@ -10,7 +10,7 @@ draw = ImageDraw.Draw(img)
 
 # Title Header
 draw.rectangle([0, 0, 800, 70], fill=(30, 41, 59))
-draw.text((20, 25), "BOTRIX LABS: ARDUINO ULTRASONIC RADAR BUILD", fill=(56, 189, 248))
+draw.text((20, 25), "MAKER LABS: ARDUINO ULTRASONIC RADAR BUILD", fill=(56, 189, 248))
 
 # Arduino Uno Board
 draw.rounded_rectangle([60, 150, 260, 480], radius=10, fill=(0, 120, 130), outline=(255, 255, 255), width=3)

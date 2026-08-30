@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Botrix Agentic Tutorial Assistant - Local CLI Runner
+Autonomous Agentic Maker Studio - Local CLI Runner
 Autonomous multimodal agent creating kid-friendly electronics tutorial packages.
 """
 
@@ -30,7 +30,7 @@ from src.models import JobStatus, JobState
 def print_banner():
     print("""
 ========================================================================
-             * BOTRIX AGENTIC TUTORIAL ASSISTANT *
+             * AUTONOMOUS AGENTIC MAKER STUDIO *
          Taskmaster Track - All Things Agentic Hackathon
 ========================================================================
 """)
@@ -76,7 +76,7 @@ def display_job_preview(job: JobState):
 def main():
     print_banner()
 
-    parser = argparse.ArgumentParser(description="Botrix Agentic Tutorial Assistant CLI")
+    parser = argparse.ArgumentParser(description="Autonomous Agentic Maker Studio CLI")
     parser.add_argument(
         "--media",
         nargs="+",

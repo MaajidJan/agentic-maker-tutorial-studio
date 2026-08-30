@@ -12,7 +12,7 @@ except ImportError:
     from src.config import Config
     from src.models import JobState, JobStatus
 
-logger = logging.getLogger("botrix_firestore")
+logger = logging.getLogger("maker_studio_firestore")
 
 # Fallback local directory
 LOCAL_STATE_DIR = Config.OUTPUT_BASE_DIR / ".state"

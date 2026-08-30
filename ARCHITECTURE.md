@@ -1,6 +1,6 @@
-# 🏛️ Botrix Agentic Tutorial Assistant — Architecture
+# 🏛️ Autonomous Agentic Maker Studio — Architecture
 
-An autonomous multi-agent pipeline designed for the **Taskmaster Track** in the **"All Things Agentic" Hackathon**. It converts raw electronics/robotics project media into structured, kid-friendly (~8-12yo) video tutorial assets.
+An autonomous multi-agent pipeline designed for the **Taskmaster Track** in the **Google "All Things Agentic" Hackathon**. It converts raw electronics/robotics project media into structured, kid-friendly (~8-12yo) video tutorial assets.
 
 ---
 
@@ -21,14 +21,14 @@ flowchart TD
         S2[("State: Script + [SFX] & [REACTION] Cues")]
         
         subgraph ParallelGeneration ["Asset Generation"]
-            A3["🎨 Sticker Artist Agent<br/>(Gemini Image / Vector Synthesizer)"]
+            A3["🎨 Reaction Sticker Engine<br/>(Web Search & PIL Die-Cut)"]
             A4["🔊 Sound Designer Agent<br/>(Freesound API / 44.1kHz WAV Synth)"]
         end
         
-        S3[("State: Mascot PNGs & Audio WAVs")]
+        S3[("State: Reaction PNGs & Audio WAVs")]
     end
 
-    subgraph MemoryLayer ["3. State & Persistence (Google Cloud)"]
+    subgraph MemoryLayer ["3. State & Persistence"]
         Firestore[("🔥 Google Cloud Firestore<br/>Async Job & State Snapshots")]
         LocalMirror[("📁 Local State Mirror<br/>(Offline / CLI Fallback)")]
     end
@@ -88,7 +88,7 @@ flowchart TD
 [SCRIPTING] (Gemini crafts kid-friendly teleprompter script with [SFX] & [REACTION] tags)
    │
    ▼
-[GENERATING_ASSETS] (Concurrent generation of original mascot stickers & 44.1kHz audio files)
+[GENERATING_ASSETS] (Concurrent generation of reaction stickers & 44.1kHz audio files)
    │
    ▼
 [AWAITING_APPROVAL] ◄─────────────────────────┐
@@ -101,11 +101,11 @@ flowchart TD
 
 ---
 
-## 4. Google Cloud Infrastructure
+## 4. Google Cloud Infrastructure Readiness
 
 ### Google Cloud Firestore
 - Serves as the persistent **agent memory** across asynchronous pipeline stages.
-- Every state transition, metadata update, and generated asset path is recorded in the `botrix_tutorial_jobs` Firestore collection.
+- Every state transition, metadata update, and generated asset path is recorded in the `maker_tutorial_jobs` Firestore collection.
 - Enables seamless polling from web and mobile clients.
 - Graceful local JSON fallback ensures the system works offline and in local CLI mode without GCP credentials.
 
@@ -119,13 +119,8 @@ flowchart TD
 
 ---
 
-## 5. Cues and Mascot Design Specifications
+## 5. Synchronized Cue Tag Format
 
-### Synchronized Cue Tag Format:
 - `[SFX: cue_name]`: Triggers a synchronized audio event (e.g. `[SFX: sonar_radar_ping]`).
-- `[REACTION: mascot_emotion]`: Triggers an on-screen reaction sticker beat (e.g. `[REACTION: botrix_shocked_alert]`).
-
-### Original Character Design:
-- **Character Name**: *Botrix the Cyber-Otter*
-- **Visual Features**: Chibi white-and-teal robotic otter chassis, luminous turquoise visor/eyes, mechanical ears, energetic cyber-tail with LED stripes, and a crisp white die-cut vinyl sticker border.
-- **Copyright Compliance**: 100% original design created specifically for this project.
+- `[REACTION: character_emotion]`: Triggers an on-screen reaction sticker beat (e.g. `[REACTION: mikasa_focused_glare]`).
+- **Die-Cut Styling**: Features transparent background, crisp white die-cut vinyl sticker border, and character emotion caption tag.

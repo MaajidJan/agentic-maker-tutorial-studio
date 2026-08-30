@@ -18,7 +18,7 @@ logger = logging.getLogger("analyzer_agent")
 
 
 ANALYZER_SYSTEM_PROMPT = """
-You are the Botrix Multimodal Project Analyzer & Dynamic Reaction Director.
+You are the Multimodal Hardware Project Analyzer & Dynamic Reaction Director.
 Your mission is to inspect the provided video/photos and user prompt of an electronics/robotics build, and extract structured insights for a kid-friendly (~8-12 years old) tutorial video.
 
 DYNAMIC AGENTIC CREATIVITY RULES:

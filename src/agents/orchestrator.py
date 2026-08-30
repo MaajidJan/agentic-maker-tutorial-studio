@@ -23,10 +23,10 @@ except ImportError:
     from src.agents.sticker_artist import StickerArtistAgent
     from src.agents.sound_designer import SoundDesignerAgent
 
-logger = logging.getLogger("botrix_orchestrator")
+logger = logging.getLogger("maker_studio_orchestrator")
 
 
-class BotrixOrchestrator:
+class MakerStudioOrchestrator:
     def __init__(self):
         self.analyzer = AnalyzerAgent()
         self.scriptwriter = ScriptwriterAgent()
@@ -41,12 +41,12 @@ class BotrixOrchestrator:
         job_id: Optional[str] = None
     ) -> JobState:
         """
-        Executes the autonomous end-to-end Botrix pipeline:
+        Executes the autonomous end-to-end multi-agent pipeline:
         1. Multimodal project analysis (Gemini 3.5 Flash)
         2. Storyboard scriptwriting with cues (Gemini 3.5 Flash)
-        3. Reaction sticker asset generation (Gemini Image / Vector Synthesizer)
+        3. Reaction sticker asset generation (Web Search / PIL Die-Cut Engine)
         4. SFX sound design (Freesound / Procedural 44.1kHz Synth)
-        5. State persistence in Firestore
+        5. State persistence in Store
         """
         if not job_id:
             job_id = f"job_{uuid.uuid4().hex[:10]}"
@@ -205,4 +205,4 @@ class BotrixOrchestrator:
 
 
 # Singleton orchestrator
-orchestrator = BotrixOrchestrator()
+orchestrator = MakerStudioOrchestrator()

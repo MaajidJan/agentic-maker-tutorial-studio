@@ -1,10 +1,10 @@
-# PowerShell deployment script for Botrix on Google Cloud Run & Firestore
+# PowerShell deployment script for Autonomous Agentic Maker Studio on Google Cloud Run & Firestore
 
 $ErrorActionPreference = "Stop"
 
-$PROJECT_ID = if ($env:GOOGLE_CLOUD_PROJECT) { $env:GOOGLE_CLOUD_PROJECT } else { "gen-lang-client-0986160378" }
+$PROJECT_ID = if ($env:GOOGLE_CLOUD_PROJECT) { $env:GOOGLE_CLOUD_PROJECT } else { "your-gcp-project-id" }
 $REGION = "us-central1"
-$SERVICE_NAME = "botrix-agentic-tutorial-assistant"
+$SERVICE_NAME = "agentic-maker-tutorial-studio"
 
 Write-Host "=== 1. Setting Active GCP Project: $PROJECT_ID ===" -ForegroundColor Cyan
 gcloud config set project $PROJECT_ID
@@ -25,7 +25,7 @@ gcloud run deploy $SERVICE_NAME `
     --region $REGION `
     --platform managed `
     --allow-unauthenticated `
-    --set-env-vars "GEMINI_API_KEY=$($env:GEMINI_API_KEY),GEMINI_MODEL=gemini-3.5-flash,GOOGLE_CLOUD_PROJECT=$PROJECT_ID,USE_FIRESTORE=true,FIRESTORE_COLLECTION=botrix_tutorial_jobs" `
+    --set-env-vars "GEMINI_API_KEY=$($env:GEMINI_API_KEY),GEMINI_MODEL=gemini-3.5-flash,GOOGLE_CLOUD_PROJECT=$PROJECT_ID,USE_FIRESTORE=true,FIRESTORE_COLLECTION=maker_tutorial_jobs" `
     --memory 2Gi `
     --cpu 2 `
     --timeout 300

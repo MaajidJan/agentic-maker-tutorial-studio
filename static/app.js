@@ -1,4 +1,4 @@
-// Botrix Agentic Tutorial Assistant - Frontend Controller
+// Autonomous Agentic Maker Studio - Frontend Controller
 
 let currentJobId = null;
 let pollTimer = null;

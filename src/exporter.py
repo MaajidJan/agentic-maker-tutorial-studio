@@ -13,7 +13,7 @@ except ImportError:
     from src.models import JobState, TutorialScript, KeyMoment, StickerAsset, AudioAsset
     from src.config import Config
 
-logger = logging.getLogger("botrix_exporter")
+logger = logging.getLogger("maker_studio_exporter")
 
 
 class PackageExporter:
@@ -24,7 +24,7 @@ class PackageExporter:
         JSON representations, markdown teleprompter script, and interactive HTML manifest viewer.
         """
         timestamp_str = datetime.utcnow().strftime("%Y%m%d_%H%M%S")
-        slug_name = (job.project_name or "botrix_tutorial").lower().replace(" ", "_")[:20]
+        slug_name = (job.project_name or "maker_tutorial").lower().replace(" ", "_")[:20]
         export_dir = Config.OUTPUT_BASE_DIR / f"run_{timestamp_str}_{slug_name}"
         export_dir.mkdir(parents=True, exist_ok=True)
 
@@ -170,7 +170,7 @@ class PackageExporter:
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{manifest.get('title', 'Botrix Tutorial Assistant Package')}</title>
+  <title>{manifest.get('title', 'Autonomous Tutorial Package')}</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -183,199 +183,124 @@ class PackageExporter:
       --primary-glow: rgba(56, 189, 248, 0.35);
       --accent: #f43f5e;
       --accent-green: #10b981;
-      --text: #f1f5f9;
+      --text: #f8fafc;
       --text-muted: #94a3b8;
+      --radius: 14px;
     }}
     * {{ box-sizing: border-box; margin: 0; padding: 0; }}
     body {{
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background: radial-gradient(circle at top right, #1e1b4b 0%, var(--bg) 60%);
+      background: var(--bg);
       color: var(--text);
-      min-height: 100vh;
-      padding: 2.5rem 1.5rem;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      padding: 2.5rem 1rem;
+      display: flex;
+      justify-content: center;
     }}
-    .container {{ max-width: 1100px; margin: 0 auto; }}
+    .container {{ max-width: 1050px; width: 100%; }}
     header {{
       background: var(--card-bg);
       border: 1px solid var(--card-border);
-      border-radius: 20px;
+      border-radius: var(--radius);
       padding: 2rem;
-      backdrop-filter: blur(12px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
       margin-bottom: 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }}
     .logo-badge {{
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      background: rgba(56, 189, 248, 0.12);
-      border: 1px solid var(--primary);
-      padding: 0.35rem 0.9rem;
-      border-radius: 999px;
-      font-size: 0.82rem;
-      font-weight: 700;
+      display: inline-block;
+      background: rgba(56, 189, 248, 0.15);
       color: var(--primary);
+      font-weight: 700;
+      font-size: 0.8rem;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 1rem;
-    }}
-    h1 {{
-      font-family: 'Outfit', sans-serif;
-      font-size: 2.2rem;
-      font-weight: 800;
-      color: #ffffff;
-      line-height: 1.25;
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid rgba(56, 189, 248, 0.3);
       margin-bottom: 0.8rem;
     }}
-    .description {{
-      color: var(--text-muted);
-      font-size: 1.05rem;
-      line-height: 1.6;
-      margin-bottom: 1.2rem;
-    }}
-    .meta-pills {{
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.75rem;
-      margin-top: 1rem;
-    }}
+    h1 {{ font-family: 'Outfit', sans-serif; font-size: 2.1rem; font-weight: 800; color: #fff; margin-bottom: 0.6rem; }}
+    .description {{ color: var(--text-muted); font-size: 1.05rem; line-height: 1.6; margin-bottom: 1.2rem; }}
+    .meta-pills {{ display: flex; gap: 0.8rem; flex-wrap: wrap; }}
     .pill {{
-      background: rgba(255,255,255,0.06);
-      padding: 0.4rem 0.85rem;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 0.35rem 0.8rem;
       border-radius: 8px;
       font-size: 0.85rem;
-      border: 1px solid rgba(255,255,255,0.1);
+      color: #cbd5e1;
     }}
-    .section-title {{
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      margin: 2.5rem 0 1.2rem 0;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }}
-    .moments-grid {{
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 1.5rem;
-    }}
+    .section-title {{ font-family: 'Outfit', sans-serif; font-size: 1.4rem; font-weight: 700; color: #fff; margin: 2rem 0 1rem 0; }}
+    .moments-grid {{ display: flex; flex-direction: column; gap: 1.2rem; }}
     .moment-card {{
       background: var(--card-bg);
       border: 1px solid var(--card-border);
-      border-radius: 16px;
+      border-radius: var(--radius);
       padding: 1.5rem;
-      backdrop-filter: blur(10px);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: transform 0.2s ease, border-color 0.2s ease;
-    }}
-    .moment-card:hover {{
-      transform: translateY(-4px);
-      border-color: var(--primary);
-    }}
-    .moment-header {{ margin-bottom: 0.8rem; }}
-    .badge {{
-      display: inline-block;
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: #38bdf8;
-      background: rgba(56, 189, 248, 0.15);
-      padding: 0.25rem 0.6rem;
-      border-radius: 6px;
-      margin-bottom: 0.4rem;
-    }}
-    .moment-card h3 {{
-      font-family: 'Outfit', sans-serif;
-      font-size: 1.2rem;
-      color: #ffffff;
-    }}
-    .moment-desc {{
-      color: var(--text-muted);
-      font-size: 0.92rem;
-      line-height: 1.5;
-      margin-bottom: 1.2rem;
-    }}
-    .assets-row {{
       display: flex;
       flex-direction: column;
       gap: 1rem;
-      background: rgba(0,0,0,0.25);
-      padding: 1rem;
-      border-radius: 12px;
     }}
-    .sticker-box {{ text-align: center; }}
-    .asset-label {{
+    .moment-header {{ display: flex; align-items: center; justify-content: space-between; }}
+    .moment-header h3 {{ font-size: 1.15rem; font-weight: 700; color: #fff; }}
+    .badge {{
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      color: var(--primary);
       font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: #94a3b8;
-      margin-bottom: 0.5rem;
-      font-weight: 600;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
     }}
-    .sticker-img {{
-      max-width: 160px;
-      max-height: 160px;
-      object-fit: contain;
-      filter: drop-shadow(0 6px 12px rgba(0,0,0,0.6));
-      transition: transform 0.25s ease;
+    .moment-desc {{ color: var(--text-muted); font-size: 0.92rem; }}
+    .assets-row {{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+      background: rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+      padding: 1rem;
     }}
-    .sticker-img:hover {{ transform: scale(1.08) rotate(3deg); }}
-    .sticker-caption {{
-      font-size: 0.8rem;
-      color: #cbd5e1;
-      margin-top: 0.4rem;
-    }}
-    .audio-box {{
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-    }}
-    .audio-title {{
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: #38bdf8;
-    }}
+    @media (max-width: 700px) {{ .assets-row {{ grid-template-columns: 1fr; }} }}
+    .sticker-box {{ display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0.5rem; }}
+    .sticker-img {{ width: 140px; height: 140px; object-fit: contain; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.5)); }}
+    .sticker-caption {{ font-size: 0.8rem; color: var(--text-muted); }}
+    .sticker-caption strong {{ color: #fff; }}
+    .audio-box {{ display: flex; flex-direction: column; justify-content: center; gap: 0.6rem; }}
+    .audio-title {{ font-size: 0.85rem; font-weight: 600; color: #cbd5e1; }}
     audio {{ width: 100%; height: 36px; border-radius: 8px; }}
-    .script-container {{
+    .asset-label {{ font-size: 0.7rem; text-transform: uppercase; font-weight: 700; color: var(--primary); letter-spacing: 0.5px; }}
+    .script-box {{
       background: var(--card-bg);
       border: 1px solid var(--card-border);
-      border-radius: 16px;
+      border-radius: var(--radius);
       padding: 1.5rem;
-      margin-top: 1rem;
+      margin-top: 1.5rem;
     }}
-    .script-row {{
-      padding: 0.75rem 0;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+    .script-lines {{ display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1rem; }}
+    .script-line {{
+      background: rgba(15, 23, 42, 0.6);
+      border-left: 3px solid var(--primary);
+      padding: 0.75rem 1rem;
+      border-radius: 0 8px 8px 0;
       font-size: 0.95rem;
-      line-height: 1.6;
+      line-height: 1.5;
     }}
-    .script-row:last-child {{ border-bottom: none; }}
-    .time-tag {{ color: #38bdf8; font-weight: 700; margin-right: 0.5rem; font-family: monospace; }}
-    .speaker-tag {{ color: #f43f5e; font-weight: 700; margin-right: 0.5rem; }}
-    .cue-sfx {{
-      background: rgba(245, 158, 11, 0.2);
-      border: 1px solid #f59e0b;
-      color: #fbbf24;
-      padding: 0.15rem 0.45rem;
+    .script-time {{ font-family: monospace; font-size: 0.8rem; color: var(--primary); font-weight: 700; margin-right: 0.5rem; }}
+    .script-speaker {{ font-weight: 700; color: #fff; margin-right: 0.4rem; }}
+    .cue-tag {{
+      display: inline-block;
+      background: rgba(244, 63, 94, 0.15);
+      border: 1px solid rgba(244, 63, 94, 0.35);
+      color: #fda4af;
+      font-size: 0.75rem;
+      padding: 0.1rem 0.4rem;
       border-radius: 4px;
       font-weight: 600;
-      font-size: 0.85rem;
-    }}
-    .cue-reaction {{
-      background: rgba(236, 72, 153, 0.2);
-      border: 1px solid #ec4899;
-      color: #f472b6;
-      padding: 0.15rem 0.45rem;
-      border-radius: 4px;
-      font-weight: 600;
-      font-size: 0.85rem;
+      margin: 0 0.2rem;
     }}
     .components-card {{
       background: var(--card-bg);
       border: 1px solid var(--card-border);
-      border-radius: 16px;
+      border-radius: var(--radius);
       padding: 1.5rem;
       margin-top: 1rem;
     }}
@@ -385,7 +310,7 @@ class PackageExporter:
 <body>
   <div class="container">
     <header>
-      <div class="logo-badge">🤖 Botrix Agentic Tutorial Package</div>
+      <div class="logo-badge">⚡ Autonomous Tutorial Package</div>
       <h1>{manifest.get('title', 'Tutorial Video Package')}</h1>
       <p class="description">{manifest.get('description', '')}</p>
       <div class="meta-pills">

@@ -30,9 +30,9 @@ class Config:
         FREESOUND_API_KEY = ""
 
     # Google Cloud & Firestore Settings
-    GOOGLE_CLOUD_PROJECT: str = os.getenv("GOOGLE_CLOUD_PROJECT", os.getenv("GCP_PROJECT", "botrix-agentic-project"))
-    FIRESTORE_COLLECTION: str = os.getenv("FIRESTORE_COLLECTION", "botrix_tutorial_jobs")
-    USE_FIRESTORE: bool = os.getenv("USE_FIRESTORE", "true").lower() in ("true", "1", "yes")
+    GOOGLE_CLOUD_PROJECT: str = os.getenv("GOOGLE_CLOUD_PROJECT", os.getenv("GCP_PROJECT", "agentic-maker-project"))
+    FIRESTORE_COLLECTION: str = os.getenv("FIRESTORE_COLLECTION", "maker_tutorial_jobs")
+    USE_FIRESTORE: bool = os.getenv("USE_FIRESTORE", "false").lower() in ("true", "1", "yes")
 
     # Storage Paths
     OUTPUT_BASE_DIR: Path = SUBMISSION_DIR / "outputs"

@@ -41,7 +41,7 @@ class ScriptCue(BaseModel):
 
 class ScriptLine(BaseModel):
     timestamp_str: str = Field(..., description="Timecode e.g. 00:05")
-    speaker: str = Field(default="Host", description="Speaker name (e.g. Host, Botrix)")
+    speaker: str = Field(default="Host", description="Speaker name (e.g. Host, Maker)")
     dialogue: str = Field(..., description="Dialogue text with inline cues")
     cues: List[ScriptCue] = Field(default_factory=list)
 

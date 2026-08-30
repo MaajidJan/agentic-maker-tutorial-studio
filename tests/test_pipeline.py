@@ -115,7 +115,7 @@ def test_scriptwriter_parsing(sample_moments, sample_components):
         {
           "timestamp_str": "00:05",
           "speaker": "Host",
-          "dialogue": "Let's turn it on! [SFX: power_chime] [REACTION: botrix_thumbs_up] Look at it boot up!"
+          "dialogue": "Let's turn it on! [SFX: power_chime] [REACTION: thumbs_up_power] Look at it boot up!"
         }
       ]
     }

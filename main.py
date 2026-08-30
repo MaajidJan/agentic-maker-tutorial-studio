@@ -25,11 +25,11 @@ from src.agents.orchestrator import orchestrator
 
 # Configure Logging
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(name)s: %(message)s")
-logger = logging.getLogger("botrix_api")
+logger = logging.getLogger("maker_studio_api")
 
 app = FastAPI(
-    title="Botrix Agentic Tutorial Assistant",
-    description="Autonomous Multimodal AI Agent creating kid-friendly robotics/electronics tutorial packages.",
+    title="Autonomous Agentic Maker Studio",
+    description="Autonomous Multimodal AI Agent Studio creating kid-friendly tutorial packages.",
     version="1.0.0"
 )
 
@@ -53,10 +53,10 @@ app.mount("/outputs", StaticFiles(directory=str(Config.OUTPUT_BASE_DIR)), name="
 
 @app.get("/health")
 def health_check():
-    """Health check for Cloud Run and monitoring."""
+    """Health check for monitoring."""
     return {
         "status": "healthy",
-        "service": "botrix-agentic-tutorial-assistant",
+        "service": "agentic-maker-tutorial-studio",
         "firestore_connected": job_store.db is not None,
         "config": Config.validate_keys()
     }
@@ -214,7 +214,7 @@ def serve_index():
     """Serves the interactive web dashboard."""
     index_path = STATIC_DIR / "index.html"
     if not index_path.exists():
-        return HTMLResponse("<h1>Botrix Assistant Ready</h1><p>Static index.html not yet built.</p>")
+        return HTMLResponse("<h1>Autonomous Maker Studio Ready</h1><p>Static index.html not yet built.</p>")
     with open(index_path, "r", encoding="utf-8") as f:
         return HTMLResponse(f.read())
 

@@ -20,7 +20,7 @@ logger = logging.getLogger("scriptwriter_agent")
 
 
 SCRIPTWRITER_SYSTEM_PROMPT = """
-You are the Botrix Kid-Friendly Electronics Scriptwriter & Anime Storyboard Director.
+You are the Kid-Friendly Electronics Scriptwriter & Storyboard Director.
 Your task is to write a thrilling, energetic, educational, and fun video script (~8-12yo audience) for a robotics/electronics tutorial.
 
 You will be given:
