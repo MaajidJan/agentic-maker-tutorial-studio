@@ -1,0 +1,187 @@
+1
+00:00:00,000 --> 00:00:04,500
+Editing engaging educational tutorials from raw electronics footage
+
+2
+00:00:04,500 --> 00:00:07,500
+is incredibly time-consuming.
+
+3
+00:00:07,800 --> 00:00:11,500
+Makers and students record hours of hardware builds,
+
+4
+00:00:11,500 --> 00:00:15,800
+but finding the right visual assets, writing kid-friendly explanations,
+
+5
+00:00:15,800 --> 00:00:20,500
+and sourcing matching sound effects takes hours of manual work.
+
+6
+00:00:21,000 --> 00:00:26,000
+Welcome to our Autonomous Agentic Tutorial Assistant,
+
+7
+00:00:26,000 --> 00:00:29,500
+built for the Google All Things Agentic Hackathon.
+
+8
+00:00:30,000 --> 00:00:34,500
+The system runs fully locally, powered by the Google Agent Development Kit,
+
+9
+00:00:34,500 --> 00:00:38,500
+Google GenAI SDK, and Google Gemini 3.5 Flash.
+
+10
+00:00:39,000 --> 00:00:43,000
+Our platform is an AI co-pilot that helps creators produce tutorial videos
+
+11
+00:00:43,000 --> 00:00:47,000
+by automatically analyzing their raw footage
+
+12
+00:00:47,000 --> 00:00:52,000
+and generating a complete production asset package based on their prompt.
+
+13
+00:00:52,500 --> 00:00:56,000
+Simply import your raw build video clips,
+
+14
+00:00:56,000 --> 00:01:00,000
+select a creative theme like Attack on Titan or any custom prompt,
+
+15
+00:01:00,000 --> 00:01:03,500
+and launch the multi-agent pipeline.
+
+16
+00:01:04,000 --> 00:01:08,000
+First, our Multimodal Analyzer Agent inspects the uploaded video footage.
+
+17
+00:01:08,500 --> 00:01:12,500
+Using Gemini 3.5 Flash multimodal vision,
+
+18
+00:01:12,500 --> 00:01:16,500
+it identifies the physical circuit components,
+
+19
+00:01:16,500 --> 00:01:20,000
+breaks down each assembly step,
+
+20
+00:01:20,000 --> 00:01:25,000
+and maps out educational analogies to make complex engineering easy for kids.
+
+21
+00:01:25,500 --> 00:01:30,500
+Behind the scenes, specialized agents orchestrated with the Google ADK
+
+22
+00:01:30,500 --> 00:01:34,000
+collaborate asynchronously to find and craft all suitable assets:
+
+23
+00:01:34,500 --> 00:01:39,000
+The Scriptwriter drafts a full teleprompter dialogue with synchronized timecodes.
+
+24
+00:01:39,500 --> 00:01:44,500
+The Dynamic Reaction Sticker Engine formulates live web queries to find real anime character frames,
+
+25
+00:01:44,500 --> 00:01:49,500
+transforming them into die-cut stickers for each dramatic beat.
+
+26
+00:01:50,000 --> 00:01:55,000
+And the Sound Designer synthesizes crystal-clear 44.1kHz audio cues.
+
+27
+00:01:55,500 --> 00:02:00,500
+Once the agents assemble the assets, the Director Control Desk gives the creator full oversight
+
+28
+00:02:00,500 --> 00:02:03,500
+with a Human-in-the-Loop review loop.
+
+29
+00:02:04,000 --> 00:02:09,000
+You can request revisions or immediately approve the package for download.
+
+30
+00:02:09,500 --> 00:02:13,000
+Look at the generated workspace!
+
+31
+00:02:13,500 --> 00:02:17,500
+Every key moment is organized with custom reaction overlays,
+
+32
+00:02:17,500 --> 00:02:22,000
+featuring Mikasa's focused radar glare and Levi's victory poses,
+
+33
+00:02:22,000 --> 00:02:26,000
+complete with playable sound effects
+
+34
+00:02:26,000 --> 00:02:30,500
+and a synchronized teleprompter script tagged with inline cues.
+
+35
+00:02:31,000 --> 00:02:35,500
+Opening the exported folder reveals everything packaged ready for video editing:
+
+36
+00:02:35,500 --> 00:02:40,000
+transparent die-cut character PNG overlays,
+
+37
+00:02:40,000 --> 00:02:43,500
+broadcast WAV audio files,
+
+38
+00:02:43,500 --> 00:02:47,000
+structured JSON metadata,
+
+39
+00:02:47,000 --> 00:02:50,500
+teleprompter markdown,
+
+40
+00:02:50,500 --> 00:02:54,500
+and a standalone interactive HTML player.
+
+41
+00:02:55,000 --> 00:03:00,000
+Please note: this entire multi-agent system runs one hundred percent locally on our machine
+
+42
+00:03:00,000 --> 00:03:04,500
+connecting directly to Google's official Gemini API,
+
+43
+00:03:04,500 --> 00:03:09,000
+as Devpost Google Cloud credits had concluded and international card issues prevented cloud billing setup.
+
+44
+00:03:09,000 --> 00:03:14,000
+However, the project is fully Dockerized and Cloud Run ready.
+
+45
+00:03:14,500 --> 00:03:18,500
+By combining the Google Agent Development Kit and Gemini 3.5 Flash,
+
+46
+00:03:18,500 --> 00:03:24,000
+we give creators all the assets they need to turn raw hardware footage into an unforgettable tutorial.
+
+47
+00:03:24,500 --> 00:03:27,000
+Thank you!

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Botrix Agentic Tutorial Assistant • Cloud Run & Gemini</title>
+  <meta name="description" content="Autonomous multimodal AI agent transforming robotics and electronics media into thrilling kid-friendly tutorial video packages." />
+  
+  <!-- Modern Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="app-layout">
+    <!-- Top Navbar -->
+    <header class="top-nav">
+      <div class="nav-left">
+        <div class="logo-icon">🤖</div>
+        <div class="brand-text">
+          <span class="brand-title">BOTRIX</span>
+          <span class="brand-subtitle">Agentic Tutorial Assistant</span>
+        </div>
+        <span class="badge-track">Taskmaster Track</span>
+      </div>
+
+      <div class="nav-right">
+        <div class="status-pill" id="firestoreStatusPill">
+          <span class="dot-indicator"></span>
+          <span id="firestoreStatusText">Firestore: Active</span>
+        </div>
+        <div class="model-pill">
+          <span>🧠 Gemini 3.5 Flash</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="main-content">
+      <!-- Hero / Setup Panel -->
+      <section class="studio-card upload-section">
+        <div class="section-header">
+          <h2>🎬 Create Autonomous Tutorial Package</h2>
+          <p>Provide project photos or video clip + tutorial goals. Botrix will analyze the circuit, write a kid-friendly script with cues, generate original anime mascot reaction stickers, and design sound effects.</p>
+        </div>
+
+        <form id="jobForm" class="job-form">
+          <div class="form-grid">
+            <!-- Media Upload Dropzone -->
+            <div class="upload-dropzone" id="dropZone">
+              <input type="file" id="mediaInput" name="files" multiple accept="image/*,video/*" class="file-input" />
+              <div class="dropzone-content">
+                <div class="upload-icon">📁</div>
+                <h3>Drop project photos or video clip here</h3>
+                <p>or click to browse files (Default: Built-in Arduino Radar fixture)</p>
+                <div class="file-preview-list" id="filePreviewList"></div>
+              </div>
+            </div>
+
+            <!-- Goal Prompt -->
+            <div class="prompt-box">
+              <label for="promptInput" class="input-label">🎯 Goal & Tone Instructions:</label>
+              <textarea id="promptInput" name="prompt" rows="4" class="styled-textarea" placeholder="e.g. Make this Arduino build super fun, interactive, and educational for 8-12 year olds with anime-style reaction beats!"></textarea>
+              
+              <div class="prompt-presets">
+                <span class="preset-label">Quick Anime Themes & Presets:</span>
+                <button type="button" class="preset-btn" data-preset="Make this Arduino build an epic Attack on Titan tutorial for kids (8-12yo)! Use Mikasa Ackerman angry focus for radar scanning, Eren Jaeger shock for obstacle alerts, and Levi victory fanfare!">⚔️ Attack on Titan (Mikasa / Eren)</button>
+                <button type="button" class="preset-btn" data-preset="Explain this obstacle robot car like a Spy x Family mission! Use Anya Forger shocked memes, Loid secret agent focus, and retro alert sound cues!">🕵️ Spy x Family (Anya Shock)</button>
+                <button type="button" class="preset-btn" data-preset="Make this Arduino ultrasonic radar build exciting for kids with One Piece Luffy laughing victory, Goku power-up boot chime, and bat sonar analogies!">🏴‍☠️ Shonen (Luffy / Goku)</button>
+                <button type="button" class="preset-btn" data-preset="Explain this LED Matrix display with colorful retro 8-bit arcade themes and joyful anime reaction stickers!">💡 Arcade 8-Bit Pixel</button>
+              </div>
+
+              <button type="submit" id="startBtn" class="btn-primary">
+                <span class="btn-icon">⚡</span> Launch Autonomous Agent Pipeline
+              </button>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <!-- Live Agent Pipeline Visualizer -->
+      <section id="pipelineSection" class="studio-card pipeline-card hidden">
+        <div class="section-header">
+          <div class="header-left">
+            <h2>🧠 Agent Pipeline State & Progress</h2>
+            <span id="activeJobIdBadge" class="job-badge">Job ID: Initializing...</span>
+          </div>
+          <div class="progress-container">
+            <div class="progress-bar" id="progressBar" style="width: 10%;"></div>
+          </div>
+        </div>
+
+        <div class="agent-stepper">
+          <!-- Step 1 -->
+          <div class="step-card" id="stepAnalyzer">
+            <div class="step-icon">🔍</div>
+            <div class="step-info">
+              <h4>1. Multimodal Analyzer</h4>
+              <p>Gemini 3.5 Flash extracts components, kid analogies & assigns real anime reactions.</p>
+            </div>
+            <div class="step-status" id="statusAnalyzer">Waiting...</div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="step-card" id="stepScriptwriter">
+            <div class="step-icon">✍️</div>
+            <div class="step-info">
+              <h4>2. Scriptwriter Agent</h4>
+              <p>Drafts kid-friendly script with [SFX] & [REACTION: Character_Emotion] cue tags.</p>
+            </div>
+            <div class="step-status" id="statusScriptwriter">Waiting...</div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="step-card" id="stepArtist">
+            <div class="step-icon">🎨</div>
+            <div class="step-info">
+              <h4>3. Real Anime Sticker Engine</h4>
+              <p>Searches and crafts real anime character reaction stickers (Mikasa, Eren, Anya, etc.).</p>
+            </div>
+            <div class="step-status" id="statusArtist">Waiting...</div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="step-card" id="stepSound">
+            <div class="step-icon">🔊</div>
+            <div class="step-info">
+              <h4>4. Sound Designer Agent</h4>
+              <p>Freesound CC-license / 44.1kHz procedural audio sound synthesis.</p>
+            </div>
+            <div class="step-status" id="statusSound">Waiting...</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Results & Approval Workspace -->
+      <section id="resultsSection" class="results-section hidden">
+        <!-- Director Controls Toolbar -->
+        <div class="director-toolbar">
+          <div class="toolbar-left">
+            <span class="director-badge">🎬 Director Control Desk</span>
+            <span id="previewStatusText" class="status-live">Awaiting Your Review</span>
+          </div>
+          <div class="toolbar-right">
+            <button id="reviseBtn" class="btn-secondary">
+              <span>🔄</span> Request Revision / Notes
+            </button>
+            <button id="approveBtn" class="btn-success">
+              <span>✅</span> Approve & Export Final Package
+            </button>
+            <button id="downloadZipBtn" class="btn-download hidden">
+              <span>📦</span> Download Package (.ZIP)
+            </button>
+          </div>
+        </div>
+
+        <!-- Project Overview Card -->
+        <div class="studio-card project-summary-card">
+          <div class="summary-header">
+            <span class="project-tag" id="extractedProjectName">Arduino Smart Project</span>
+            <h1 id="projectTitle">Super Exciting Tutorial Title</h1>
+            <p id="projectDescription" class="summary-desc">Tutorial description will appear here...</p>
+          </div>
+
+          <div class="concept-callout">
+            <div class="callout-icon">💡</div>
+            <div class="callout-content">
+              <strong>How It Works (Kid Explanation):</strong>
+              <p id="kidExplanation">Explanation loading...</p>
+            </div>
+          </div>
+
+          <!-- Components Grid -->
+          <div class="components-section">
+            <h3>🛠️ Hardware Components Checklist:</h3>
+            <div id="componentsList" class="components-grid"></div>
+          </div>
+        </div>
+
+        <!-- Key Moments & Asset Stage -->
+        <div class="stage-grid">
+          <!-- Left: Reaction Stickers & SFX Grid -->
+          <div class="studio-card">
+            <h3>✨ Key Moments, Anime Stickers & Sound Cues</h3>
+            <div id="momentsGrid" class="moments-grid"></div>
+          </div>
+
+          <!-- Right: Interactive Teleprompter Script -->
+          <div class="studio-card teleprompter-card">
+            <div class="teleprompter-header">
+              <h3>📜 Teleprompter Director Script</h3>
+              <span class="cue-legend">
+                <span class="legend-sfx">[SFX: Audio]</span>
+                <span class="legend-reaction">[REACTION: Sticker]</span>
+              </span>
+            </div>
+            <div id="scriptContent" class="script-scroll-box"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Revision Modal -->
+      <div id="revisionModal" class="modal hidden">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3>🔄 Provide Director Revision Feedback</h3>
+            <button id="closeModalBtn" class="modal-close-btn">&times;</button>
+          </div>
+          <p class="modal-sub">Tell the AI agent what to tweak (e.g., 'Make the host joke more about bat sonar', 'Add an alarm sound at 0:25').</p>
+          <textarea id="revisionNoteInput" rows="4" class="styled-textarea" placeholder="Enter revision instructions here..."></textarea>
+          <div class="modal-actions">
+            <button id="cancelRevisionBtn" class="btn-secondary">Cancel</button>
+            <button id="submitRevisionBtn" class="btn-primary">⚡ Re-run Pipeline with Feedback</button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>Botrix Agentic Tutorial Assistant • Built for Google All Things Agentic Hackathon • Powered by Gemini 3.5 Flash & Cloud Run</p>
+    </footer>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
