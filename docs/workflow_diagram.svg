@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 480" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1120" />
+      <stop offset="100%" stop-color="#070a13" />
+    </linearGradient>
+    <filter id="shadow2" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#000" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <rect width="1100" height="480" fill="url(#bgGrad2)" rx="16" stroke="#1e293b" stroke-width="2" />
+
+  <g transform="translate(40, 30)">
+    <text x="0" y="24" fill="#38bdf8" font-family="sans-serif" font-size="12" font-weight="700" letter-spacing="1">END-TO-END AUTONOMOUS PIPELINE</text>
+    <text x="0" y="52" fill="#ffffff" font-family="sans-serif" font-size="24" font-weight="800">State Machine &amp; Human-in-the-Loop Review Cycle</text>
+  </g>
+
+  <!-- 5 Sequential Workflow Steps -->
+  <g transform="translate(40, 110)">
+    <!-- Step 1: Input -->
+    <g transform="translate(0, 0)" filter="url(#shadow2)">
+      <rect width="180" height="210" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5" />
+      <circle cx="28" cy="28" r="14" fill="rgba(56, 189, 248, 0.2)" />
+      <text x="24" y="33" fill="#38bdf8" font-family="sans-serif" font-size="13" font-weight="800">1</text>
+      <text x="50" y="32" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="700">Ingestion</text>
+      
+      <text x="16" y="70" fill="#cbd5e1" font-family="sans-serif" font-size="11" font-weight="600">User uploads:</text>
+      <text x="16" y="92" fill="#94a3b8" font-family="sans-serif" font-size="10">• Hardware photos/clips</text>
+      <text x="16" y="112" fill="#94a3b8" font-family="sans-serif" font-size="10">• Custom creative prompt</text>
+      <rect x="14" y="150" width="152" height="40" rx="6" fill="#1e293b" />
+      <text x="22" y="174" fill="#38bdf8" font-family="monospace" font-size="10">State: PENDING</text>
+    </g>
+
+    <!-- Arrow 1 -->
+    <path d="M 190 105 L 220 105" stroke="#38bdf8" stroke-width="3" fill="none" marker-end="url(#arrow)" />
+
+    <!-- Step 2: Analyzer -->
+    <g transform="translate(230, 0)" filter="url(#shadow2)">
+      <rect width="180" height="210" rx="12" fill="#0f172a" stroke="rgba(56, 189, 248, 0.4)" stroke-width="1.5" />
+      <circle cx="28" cy="28" r="14" fill="rgba(56, 189, 248, 0.2)" />
+      <text x="24" y="33" fill="#38bdf8" font-family="sans-serif" font-size="13" font-weight="800">2</text>
+      <text x="50" y="32" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="700">Multimodal</text>
+      
+      <text x="16" y="70" fill="#cbd5e1" font-family="sans-serif" font-size="11" font-weight="600">Gemini 3.5 Flash:</text>
+      <text x="16" y="92" fill="#94a3b8" font-family="sans-serif" font-size="10">• Detects components</text>
+      <text x="16" y="112" fill="#94a3b8" font-family="sans-serif" font-size="10">• Crafts analogies</text>
+      <text x="16" y="132" fill="#94a3b8" font-family="sans-serif" font-size="10">• Formulates search queries</text>
+      <rect x="14" y="150" width="152" height="40" rx="6" fill="#1e293b" />
+      <text x="22" y="174" fill="#38bdf8" font-family="monospace" font-size="10">State: ANALYZING</text>
+    </g>
+
+    <!-- Arrow 2 -->
+    <path d="M 420 105 L 450 105" stroke="#c084fc" stroke-width="3" fill="none" />
+
+    <!-- Step 3: Script & Cues -->
+    <g transform="translate(460, 0)" filter="url(#shadow2)">
+      <rect width="180" height="210" rx="12" fill="#0f172a" stroke="rgba(192, 132, 252, 0.4)" stroke-width="1.5" />
+      <circle cx="28" cy="28" r="14" fill="rgba(192, 132, 252, 0.2)" />
+      <text x="24" y="33" fill="#c084fc" font-family="sans-serif" font-size="13" font-weight="800">3</text>
+      <text x="50" y="32" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="700">Script &amp; Cues</text>
+      
+      <text x="16" y="70" fill="#cbd5e1" font-family="sans-serif" font-size="11" font-weight="600">Google ADK Pipeline:</text>
+      <text x="16" y="92" fill="#94a3b8" font-family="sans-serif" font-size="10">• YouTube Title &amp; Hook</text>
+      <text x="16" y="112" fill="#94a3b8" font-family="sans-serif" font-size="10">• [SFX] sync markers</text>
+      <text x="16" y="132" fill="#94a3b8" font-family="sans-serif" font-size="10">• [REACTION] sync beats</text>
+      <rect x="14" y="150" width="152" height="40" rx="6" fill="#1e293b" />
+      <text x="22" y="174" fill="#c084fc" font-family="monospace" font-size="10">State: SCRIPTING</text>
+    </g>
+
+    <!-- Arrow 3 -->
+    <path d="M 650 105 L 680 105" stroke="#f43f5e" stroke-width="3" fill="none" />
+
+    <!-- Step 4: Asset Synthesis -->
+    <g transform="translate(690, 0)" filter="url(#shadow2)">
+      <rect width="180" height="210" rx="12" fill="#0f172a" stroke="rgba(244, 63, 94, 0.4)" stroke-width="1.5" />
+      <circle cx="28" cy="28" r="14" fill="rgba(244, 63, 94, 0.2)" />
+      <text x="24" y="33" fill="#f43f5e" font-family="sans-serif" font-size="13" font-weight="800">4</text>
+      <text x="50" y="32" fill="#ffffff" font-family="sans-serif" font-size="13" font-weight="700">Synthesis</text>
+      
+      <text x="16" y="70" fill="#cbd5e1" font-family="sans-serif" font-size="11" font-weight="600">Parallel Generation:</text>
+      <text x="16" y="92" fill="#94a3b8" font-family="sans-serif" font-size="10">• PIL 28px Die-Cut PNGs</text>
+      <text x="16" y="112" fill="#94a3b8" font-family="sans-serif" font-size="10">• 44.1kHz WAV Audio</text>
+      <text x="16" y="132" fill="#94a3b8" font-family="sans-serif" font-size="10">• Firestore Job Sync</text>
+      <rect x="14" y="150" width="152" height="40" rx="6" fill="#1e293b" />
+      <text x="22" y="174" fill="#f43f5e" font-family="monospace" font-size="9">GENERATING_ASSETS</text>
+    </g>
+
+    <!-- Arrow 4 -->
+    <path d="M 880 105 L 910 105" stroke="#10b981" stroke-width="3" fill="none" />
+
+    <!-- Step 5: Review & Export -->
+    <g transform="translate(920, 0)" filter="url(#shadow2)">
+      <rect width="100" height="210" rx="12" fill="#0f172a" stroke="rgba(16, 185, 129, 0.5)" stroke-width="1.5" />
+      <circle cx="28" cy="28" r="14" fill="rgba(16, 185, 129, 0.2)" />
+      <text x="24" y="33" fill="#10b981" font-family="sans-serif" font-size="13" font-weight="800">5</text>
+      <text x="48" y="32" fill="#ffffff" font-family="sans-serif" font-size="12" font-weight="700">Export</text>
+      
+      <text x="10" y="70" fill="#cbd5e1" font-family="sans-serif" font-size="10" font-weight="600">Director:</text>
+      <text x="10" y="90" fill="#94a3b8" font-family="sans-serif" font-size="9">• Review Desk</text>
+      <text x="10" y="108" fill="#94a3b8" font-family="sans-serif" font-size="9">• HITL notes</text>
+      <text x="10" y="126" fill="#10b981" font-family="sans-serif" font-size="9" font-weight="700">• 1-Click ZIP</text>
+      <rect x="8" y="150" width="84" height="40" rx="6" fill="#1e293b" />
+      <text x="14" y="174" fill="#10b981" font-family="monospace" font-size="9">APPROVED</text>
+    </g>
+  </g>
+
+  <!-- Human-in-the-Loop Feedback Arc Line -->
+  <g transform="translate(0, 340)">
+    <path d="M 970 0 Q 700 80 550 0" stroke="#fbbf24" stroke-width="2" stroke-dasharray="6,4" fill="none" />
+    <rect x="680" y="24" width="160" height="24" rx="6" fill="#1e293b" stroke="#fbbf24" stroke-width="1" />
+    <text x="690" y="40" fill="#fbbf24" font-family="sans-serif" font-size="10" font-weight="700">🔄 Director Revision Loop</text>
+  </g>
+</svg>

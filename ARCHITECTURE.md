@@ -6,6 +6,10 @@ An autonomous multi-agent pipeline designed for the **Taskmaster Track** in the 
 
 ## 1. System Architecture Overview
 
+<p align="center">
+  <img src="docs/architecture_diagram.svg" width="100%" alt="System Architecture Diagram" />
+</p>
+
 ```mermaid
 flowchart TD
     subgraph Inputs ["1. Ingestion Layer"]
