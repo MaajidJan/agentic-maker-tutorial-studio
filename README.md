@@ -18,10 +18,10 @@
 
 ---
 
-## 🏛️ System Architecture
+## 🏛️ Comprehensive Model & System Architecture
 
 <p align="center">
-  <img src="docs/architecture_diagram.svg" width="100%" alt="Autonomous Agentic Maker Studio Architecture Diagram" />
+  <img src="docs/detailed_architecture_diagram.svg" width="100%" alt="Detailed Model & Pipeline Schematic" />
 </p>
 
 ---

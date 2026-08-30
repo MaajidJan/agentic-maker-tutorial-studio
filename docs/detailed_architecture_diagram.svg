@@ -1,0 +1,388 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 950" width="100%" height="100%">
+  <defs>
+    <linearGradient id="deepBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050811" />
+      <stop offset="50%" stop-color="#0c1322" />
+      <stop offset="100%" stop-color="#050811" />
+    </linearGradient>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#818cf8" />
+    </linearGradient>
+    <filter id="boxShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000000" flood-opacity="0.6"/>
+    </filter>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#38bdf8" />
+    </marker>
+    <marker id="arrowPink" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f43f5e" />
+    </marker>
+    <marker id="arrowYellow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#fbbf24" />
+    </marker>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="1400" height="950" fill="url(#deepBg)" rx="16" stroke="#1e293b" stroke-width="2"/>
+  
+  <!-- Grid Matrix Texture Background -->
+  <g opacity="0.04" stroke="#ffffff" stroke-width="1">
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" />
+    </pattern>
+    <rect width="1400" height="950" fill="url(#grid)" />
+  </g>
+
+  <!-- Top Header Title -->
+  <g transform="translate(50, 40)">
+    <rect x="0" y="0" width="340" height="26" rx="13" fill="rgba(56, 189, 248, 0.12)" stroke="rgba(56, 189, 248, 0.4)" />
+    <text x="14" y="17" fill="#38bdf8" font-family="sans-serif" font-size="11" font-weight="700" letter-spacing="1">⚡ DETAILED MODEL &amp; SYSTEM SCHEMATIC</text>
+    
+    <text x="0" y="58" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" font-size="26" font-weight="800">Autonomous Agentic Maker Studio Architecture</text>
+    <text x="0" y="82" fill="#94a3b8" font-family="sans-serif" font-size="13">Comprehensive Multi-Stage Deep Agentic Pipeline with Multimodal Backbone, Cue Synchronizer, &amp; Dual Synthesis Heads</text>
+  </g>
+
+  <!-- ==================== STAGE 1: INPUT TENSOR HEAD ==================== -->
+  <g transform="translate(50, 150)" filter="url(#boxShadow)">
+    <rect width="220" height="660" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1.5" />
+    <rect width="220" height="36" rx="12" fill="#1e293b" />
+    <text x="14" y="23" fill="#cbd5e1" font-family="sans-serif" font-size="11" font-weight="800">STAGE 1: INPUT HEAD</text>
+
+    <!-- Block 1.1: Video Frames Tensor -->
+    <g transform="translate(14, 55)">
+      <rect width="192" height="130" rx="8" fill="#161f30" stroke="#38bdf8" stroke-width="1" />
+      <text x="12" y="24" fill="#38bdf8" font-family="sans-serif" font-size="12" font-weight="700">📷 Video / Image Stream</text>
+      <text x="12" y="44" fill="#94a3b8" font-family="monospace" font-size="10">Shape: (N_frames, H, W, 3)</text>
+      <text x="12" y="62" fill="#64748b" font-family="sans-serif" font-size="10">• Temporal Keyframe Sampler</text>
+      <text x="12" y="78" fill="#64748b" font-family="sans-serif" font-size="10">• RGB Array Normalizer</text>
+      <text x="12" y="94" fill="#64748b" font-family="sans-serif" font-size="10">• 1080p Hardware Capture</text>
+      <rect x="12" y="104" width="168" height="16" rx="4" fill="rgba(56,189,248,0.15)" />
+      <text x="18" y="116" fill="#38bdf8" font-family="sans-serif" font-size="9" font-weight="700">Tensor Payload Ingestion</text>
+    </g>
+
+    <!-- Block 1.2: Creative Goal Prompt -->
+    <g transform="translate(14, 200)">
+      <rect width="192" height="130" rx="8" fill="#161f30" stroke="#c084fc" stroke-width="1" />
+      <text x="12" y="24" fill="#c084fc" font-family="sans-serif" font-size="12" font-weight="700">💬 Prompt Condition Vector</text>
+      <text x="12" y="44" fill="#94a3b8" font-family="monospace" font-size="10">Shape: (Seq_Len, D_emb)</text>
+      <text x="12" y="62" fill="#64748b" font-family="sans-serif" font-size="10">• Target Age: 8-12 yo</text>
+      <text x="12" y="78" fill="#64748b" font-family="sans-serif" font-size="10">• Style / Franchise Tokens</text>
+      <text x="12" y="94" fill="#64748b" font-family="sans-serif" font-size="10">• Zero-Hardcoding Intent</text>
+      <rect x="12" y="104" width="168" height="16" rx="4" fill="rgba(192,132,252,0.15)" />
+      <text x="18" y="116" fill="#c084fc" font-family="sans-serif" font-size="9" font-weight="700">Conditioning Context</text>
+    </g>
+
+    <!-- Block 1.3: Asynchronous Job ID Dispatcher -->
+    <g transform="translate(14, 345)">
+      <rect width="192" height="140" rx="8" fill="#161f30" stroke="#64748b" stroke-width="1" />
+      <text x="12" y="24" fill="#f8fafc" font-family="sans-serif" font-size="12" font-weight="700">⚙️ Dispatch Orchestrator</text>
+      <text x="12" y="44" fill="#94a3b8" font-family="monospace" font-size="10">UUID: job_xxxxxxxx</text>
+      <text x="12" y="62" fill="#64748b" font-family="sans-serif" font-size="10">• JobState Initializer</text>
+      <text x="12" y="78" fill="#64748b" font-family="sans-serif" font-size="10">• Status: [PENDING]</text>
+      <text x="12" y="94" fill="#64748b" font-family="sans-serif" font-size="10">• Temp Directory Allocator</text>
+      <rect x="12" y="110" width="168" height="20" rx="4" fill="rgba(255,255,255,0.05)" />
+      <text x="18" y="124" fill="#cbd5e1" font-family="sans-serif" font-size="9">Session State Ready</text>
+    </g>
+
+    <!-- Bottom Stage Info -->
+    <g transform="translate(14, 500)">
+      <rect width="192" height="140" rx="8" fill="rgba(255,255,255,0.02)" stroke="#1e293b" />
+      <text x="12" y="24" fill="#38bdf8" font-family="sans-serif" font-size="11" font-weight="700">Data Contract Out:</text>
+      <text x="12" y="44" fill="#cbd5e1" font-family="monospace" font-size="10">{ media_paths: [...]</text>
+      <text x="12" y="60" fill="#cbd5e1" font-family="monospace" font-size="10">  user_prompt: "..."</text>
+      <text x="12" y="76" fill="#cbd5e1" font-family="monospace" font-size="10">  job_id: "..." }</text>
+      <text x="12" y="105" fill="#94a3b8" font-family="sans-serif" font-size="10">Pipes into Multimodal</text>
+      <text x="12" y="122" fill="#94a3b8" font-family="sans-serif" font-size="10">Reasoning Backbone</text>
+    </g>
+  </g>
+
+  <!-- Connect Stage 1 -> Stage 2 -->
+  <path d="M 270 480 L 320 480" stroke="#38bdf8" stroke-width="2.5" fill="none" marker-end="url(#arrowhead)" />
+
+  <!-- ==================== STAGE 2: MULTIMODAL BACKBONE (GEMINI 3.5 FLASH) ==================== -->
+  <g transform="translate(320, 150)" filter="url(#boxShadow)">
+    <rect width="250" height="660" rx="12" fill="#0f172a" stroke="rgba(56,189,248,0.5)" stroke-width="1.5" />
+    <rect width="250" height="36" rx="12" fill="rgba(56,189,248,0.15)" />
+    <text x="14" y="23" fill="#38bdf8" font-family="sans-serif" font-size="11" font-weight="800">STAGE 2: MULTIMODAL BACKBONE</text>
+
+    <!-- Sub-module: Gemini 3.5 Flash Model Card -->
+    <g transform="translate(14, 52)">
+      <rect width="222" height="60" rx="8" fill="#161f30" stroke="#38bdf8" stroke-width="1.5" />
+      <text x="12" y="24" fill="#38bdf8" font-family="sans-serif" font-size="13" font-weight="800">🧠 Gemini 3.5 Flash</text>
+      <text x="12" y="42" fill="#94a3b8" font-family="sans-serif" font-size="10">Google GenAI SDK (google-genai)</text>
+      <rect x="155" y="12" width="55" height="18" rx="4" fill="#0284c7" />
+      <text x="162" y="25" fill="#fff" font-family="sans-serif" font-size="9" font-weight="700">CORE</text>
+    </g>
+
+    <!-- Internal Processing Layers of Analyzer -->
+    <g transform="translate(14, 125)">
+      <!-- Layer 1: Hardware Vision Extractor -->
+      <rect width="222" height="85" rx="8" fill="#1e293b" stroke="#334155" />
+      <text x="10" y="20" fill="#f8fafc" font-family="sans-serif" font-size="11" font-weight="700">🔬 2.1 Hardware Component Node</text>
+      <text x="10" y="38" fill="#94a3b8" font-family="sans-serif" font-size="10">• Arduino Uno MCU + Pins</text>
+      <text x="10" y="54" fill="#94a3b8" font-family="sans-serif" font-size="10">• HC-SR04 Ultrasonic Sonar</text>
+      <text x="10" y="70" fill="#94a3b8" font-family="sans-serif" font-size="10">• SG90 Servo + Jumper Wires</text>
+    </g>
+
+    <g transform="translate(14, 222)">
+      <!-- Layer 2: Kid Cognitive Analogy Node -->
+      <rect width="222" height="85" rx="8" fill="#1e293b" stroke="#334155" />
+      <text x="10" y="20" fill="#f8fafc" font-family="sans-serif" font-size="11" font-weight="700">💡 2.2 Pedagogical Analogy Node</text>
+      <text x="10" y="38" fill="#94a3b8" font-family="sans-serif" font-size="10">• Physics to intuition mapping</text>
+      <text x="10" y="54" fill="#94a3b8" font-family="sans-serif" font-size="10">• 40kHz bat radar echo analogy</text>
+      <text x="10" y="70" fill="#38bdf8" font-family="sans-serif" font-size="10">Targeted for 8-12yo comprehension</text>
+    </g>
+
+    <g transform="translate(14, 319)">
+      <!-- Layer 3: Key Reaction Moments Head -->
+      <rect width="222" height="110" rx="8" fill="#1e293b" stroke="#334155" />
+      <text x="10" y="20" fill="#f8fafc" font-family="sans-serif" font-size="11" font-weight="700">⚡ 2.3 Key Moments Detection Head</text>
+      <text x="10" y="38" fill="#94a3b8" font-family="sans-serif" font-size="10">• Moment 1: [00:05] Booting up</text>
+      <text x="10" y="54" fill="#94a3b8" font-family="sans-serif" font-size="10">• Moment 2: [00:14] Radar Sweep</text>
+      <text x="10" y="70" fill="#94a3b8" font-family="sans-serif" font-size="10">• Moment 3: [00:22] Obstacle Alert</text>
+      <rect x="10" y="80" width="202" height="20" rx="4" fill="rgba(56,189,248,0.1)" />
+      <text x="16" y="94" fill="#38bdf8" font-family="monospace" font-size="9">Outputs: List[KeyMoment]</text>
+    </g>
+
+    <g transform="translate(14, 442)">
+      <!-- Layer 4: Dynamic Search Formulation Engine -->
+      <rect width="222" height="100" rx="8" fill="#1e293b" stroke="rgba(244,63,94,0.4)" />
+      <text x="10" y="20" fill="#f43f5e" font-family="sans-serif" font-size="11" font-weight="700">🎯 2.4 Agentic Query Formulator</text>
+      <text x="10" y="38" fill="#cbd5e1" font-family="sans-serif" font-size="10">• Maps user prompt to characters</text>
+      <text x="10" y="54" fill="#cbd5e1" font-family="sans-serif" font-size="10">• e.g. Eren Jaeger biting hand</text>
+      <text x="10" y="70" fill="#cbd5e1" font-family="sans-serif" font-size="10">• e.g. Mikasa Ackerman focused</text>
+      <rect x="10" y="76" width="202" height="16" rx="4" fill="rgba(244,63,94,0.15)" />
+      <text x="16" y="88" fill="#fda4af" font-family="monospace" font-size="8">image_search_query generated</text>
+    </g>
+
+    <!-- State Transition Bar -->
+    <g transform="translate(14, 555)">
+      <rect width="222" height="85" rx="8" fill="rgba(56,189,248,0.06)" stroke="rgba(56,189,248,0.3)" />
+      <text x="10" y="22" fill="#38bdf8" font-family="sans-serif" font-size="11" font-weight="700">State Transition: ANALYZING</text>
+      <text x="10" y="42" fill="#94a3b8" font-family="monospace" font-size="9">components: List[str]</text>
+      <text x="10" y="58" fill="#94a3b8" font-family="monospace" font-size="9">key_moments: List[Moment]</text>
+      <text x="10" y="74" fill="#94a3b8" font-family="monospace" font-size="9">explanation_summary: str</text>
+    </g>
+  </g>
+
+  <!-- Connect Stage 2 -> Stage 3 -->
+  <path d="M 570 480 L 620 480" stroke="#c084fc" stroke-width="2.5" fill="none" marker-end="url(#arrowhead)" />
+
+  <!-- ==================== STAGE 3: SCRIPTWRITER & CUE SYNCHRONIZER ==================== -->
+  <g transform="translate(620, 150)" filter="url(#boxShadow)">
+    <rect width="240" height="660" rx="12" fill="#0f172a" stroke="rgba(192,132,252,0.5)" stroke-width="1.5" />
+    <rect width="240" height="36" rx="12" fill="rgba(192,132,252,0.15)" />
+    <text x="14" y="23" fill="#c084fc" font-family="sans-serif" font-size="11" font-weight="800">STAGE 3: SCRIPT &amp; CUE NECK</text>
+
+    <!-- Storyboard Director Model Card -->
+    <g transform="translate(14, 52)">
+      <rect width="212" height="60" rx="8" fill="#161f30" stroke="#c084fc" stroke-width="1.5" />
+      <text x="12" y="24" fill="#c084fc" font-family="sans-serif" font-size="13" font-weight="800">✍️ Storyboard Director</text>
+      <text x="12" y="42" fill="#94a3b8" font-family="sans-serif" font-size="10">Google ADK Pipeline Controller</text>
+    </g>
+
+    <!-- Sub-Layers of Scriptwriter -->
+    <g transform="translate(14, 125)">
+      <rect width="212" height="85" rx="8" fill="#1e293b" stroke="#334155" />
+      <text x="10" y="20" fill="#f8fafc" font-family="sans-serif" font-size="11" font-weight="700">🎬 3.1 Metadata Synthesizer</text>
+      <text x="10" y="38" fill="#cbd5e1" font-family="sans-serif" font-size="10">• YouTube / TikTok Hook Title</text>
+      <text x="10" y="54" fill="#cbd5e1" font-family="sans-serif" font-size="10">• Engaging Video Description</text>
+      <text x="10" y="70" fill="#cbd5e1" font-family="sans-serif" font-size="10">• Target Age Tuning (8-12yo)</text>
+    </g>
+
+    <g transform="translate(14, 222)">
+      <rect width="212" height="110" rx="8" fill="#1e293b" stroke="rgba(244,63,94,0.4)" />
+      <text x="10" y="20" fill="#f43f5e" font-family="sans-serif" font-size="11" font-weight="700">🏷️ 3.2 Cue Tag Injector</text>
+      <text x="10" y="38" fill="#cbd5e1" font-family="sans-serif" font-size="10">• Inline [SFX: query] triggers</text>
+      <text x="10" y="54" fill="#cbd5e1" font-family="sans-serif" font-size="10">• Inline [REACTION: sticker] beats</text>
+      <text x="10" y="70" fill="#cbd5e1" font-family="sans-serif" font-size="10">• Timestamp Synchronizer</text>
+      <rect x="10" y="80" width="192" height="20" rx="4" fill="rgba(244,63,94,0.15)" />
+      <text x="16" y="94" fill="#fda4af" font-family="monospace" font-size="9">[SFX: ping] [REACTION: alert]</text>
+    </g>
+
+    <g transform="translate(14, 344)">
+      <rect width="212" height="100" rx="8" fill="#1e293b" stroke="#334155" />
+      <text x="10" y="20" fill="#f8fafc" font-family="sans-serif" font-size="11" font-weight="700">📜 3.3 Teleprompter Dialogue</text>
+      <text x="10" y="38" fill="#94a3b8" font-family="sans-serif" font-size="10">• Host lines &amp; voice pacing</text>
+      <text x="10" y="54" fill="#94a3b8" font-family="sans-serif" font-size="10">• 130-150 words/minute pacing</text>
+      <text x="10" y="70" fill="#94a3b8" font-family="sans-serif" font-size="10">• Timecodes (00:00, 00:05...)</text>
+      <rect x="10" y="76" width="192" height="16" rx="4" fill="rgba(192,132,252,0.15)" />
+      <text x="16" y="88" fill="#c084fc" font-family="monospace" font-size="8">List[ScriptLine] generated</text>
+    </g>
+
+    <!-- State Transition Bar -->
+    <g transform="translate(14, 456)">
+      <rect width="212" height="184" rx="8" fill="rgba(192,132,252,0.06)" stroke="rgba(192,132,252,0.3)" />
+      <text x="10" y="22" fill="#c084fc" font-family="sans-serif" font-size="11" font-weight="700">State: SCRIPTING</text>
+      <text x="10" y="42" fill="#cbd5e1" font-family="sans-serif" font-size="10">Forking to Parallel Asset Heads:</text>
+      
+      <rect x="8" y="52" width="196" height="48" rx="6" fill="#161f30" />
+      <text x="14" y="70" fill="#f43f5e" font-family="sans-serif" font-size="10" font-weight="700">↗ Branch A: Reaction Stickers</text>
+      <text x="14" y="86" fill="#94a3b8" font-family="sans-serif" font-size="9">Dynamic Web Search + PIL Die-Cut</text>
+
+      <rect x="8" y="110" width="196" height="48" rx="6" fill="#161f30" />
+      <text x="14" y="128" fill="#34d399" font-family="sans-serif" font-size="10" font-weight="700">↘ Branch B: 44.1kHz SFX Synth</text>
+      <text x="14" y="144" fill="#94a3b8" font-family="sans-serif" font-size="9">Freesound API + Sine/Chirp Synth</text>
+    </g>
+  </g>
+
+  <!-- Connect Stage 3 -> Fork Branches -->
+  <path d="M 860 300 L 910 270" stroke="#f43f5e" stroke-width="2.5" fill="none" marker-end="url(#arrowhead)" />
+  <path d="M 860 620 L 910 650" stroke="#34d399" stroke-width="2.5" fill="none" marker-end="url(#arrowhead)" />
+
+  <!-- ==================== STAGE 4: DUAL SYNTHESIS HEADS ==================== -->
+  <!-- Branch A: Reaction Sticker Engine -->
+  <g transform="translate(910, 150)" filter="url(#boxShadow)">
+    <rect width="210" height="315" rx="12" fill="#0f172a" stroke="rgba(244,63,94,0.5)" stroke-width="1.5" />
+    <rect width="210" height="32" rx="12" fill="rgba(244,63,94,0.15)" />
+    <text x="12" y="21" fill="#f43f5e" font-family="sans-serif" font-size="10" font-weight="800">4A. REACTION STICKER HEAD</text>
+
+    <g transform="translate(10, 42)">
+      <rect width="190" height="50" rx="6" fill="#1e293b" />
+      <text x="8" y="18" fill="#f8fafc" font-family="sans-serif" font-size="10" font-weight="700">🌐 Web Image Scraper</text>
+      <text x="8" y="32" fill="#94a3b8" font-family="sans-serif" font-size="9">httpx direct frame download</text>
+      <text x="8" y="44" fill="#94a3b8" font-family="sans-serif" font-size="8">Regex murl high-res extractor</text>
+    </g>
+
+    <g transform="translate(10, 100)">
+      <rect width="190" height="55" rx="6" fill="#1e293b" />
+      <text x="8" y="18" fill="#f8fafc" font-family="sans-serif" font-size="10" font-weight="700">✂️ PIL Die-Cut Engine</text>
+      <text x="8" y="32" fill="#94a3b8" font-family="sans-serif" font-size="9">Alpha dilation: MaxFilter(15)</text>
+      <text x="8" y="46" fill="#94a3b8" font-family="sans-serif" font-size="9">28px White Vinyl Sticker Border</text>
+    </g>
+
+    <g transform="translate(10, 163)">
+      <rect width="190" height="65" rx="6" fill="#1e293b" />
+      <text x="8" y="18" fill="#f8fafc" font-family="sans-serif" font-size="10" font-weight="700">🏷️ Badge &amp; Drop Shadow</text>
+      <text x="8" y="32" fill="#94a3b8" font-family="sans-serif" font-size="9">Character pill + emotion label</text>
+      <text x="8" y="46" fill="#94a3b8" font-family="sans-serif" font-size="9">RGBA transparent composite</text>
+      <text x="8" y="58" fill="#f43f5e" font-family="sans-serif" font-size="8" font-weight="700">Output: High-res *.PNG</text>
+    </g>
+
+    <g transform="translate(10, 238)">
+      <rect width="190" height="65" rx="6" fill="rgba(244,63,94,0.08)" stroke="rgba(244,63,94,0.3)" />
+      <text x="8" y="20" fill="#f43f5e" font-family="sans-serif" font-size="10" font-weight="700">Verified Sticker Assets:</text>
+      <text x="8" y="36" fill="#cbd5e1" font-family="monospace" font-size="8">• moment_1_eren_jaeger.png</text>
+      <text x="8" y="48" fill="#cbd5e1" font-family="monospace" font-size="8">• moment_2_mikasa.png</text>
+      <text x="8" y="60" fill="#cbd5e1" font-family="monospace" font-size="8">• moment_3_levi.png</text>
+    </g>
+  </g>
+
+  <!-- Branch B: Sound Designer Engine -->
+  <g transform="translate(910, 495)" filter="url(#boxShadow)">
+    <rect width="210" height="315" rx="12" fill="#0f172a" stroke="rgba(52,211,153,0.5)" stroke-width="1.5" />
+    <rect width="210" height="32" rx="12" fill="rgba(52,211,153,0.15)" />
+    <text x="12" y="21" fill="#34d399" font-family="sans-serif" font-size="10" font-weight="800">4B. SOUND DESIGNER HEAD</text>
+
+    <g transform="translate(10, 42)">
+      <rect width="190" height="50" rx="6" fill="#1e293b" />
+      <text x="8" y="18" fill="#f8fafc" font-family="sans-serif" font-size="10" font-weight="700">🔊 Freesound REST API</text>
+      <text x="8" y="32" fill="#94a3b8" font-family="sans-serif" font-size="9">CC0/CC-BY Audio Search</text>
+      <text x="8" y="44" fill="#94a3b8" font-family="sans-serif" font-size="8">Fallback to procedural synth</text>
+    </g>
+
+    <g transform="translate(10, 100)">
+      <rect width="190" height="65" rx="6" fill="#1e293b" />
+      <text x="8" y="18" fill="#f8fafc" font-family="sans-serif" font-size="10" font-weight="700">🎛️ 44.1kHz Procedural Synth</text>
+      <text x="8" y="32" fill="#94a3b8" font-family="sans-serif" font-size="9">• Radar chirp: 800Hz→2.4kHz</text>
+      <text x="8" y="46" fill="#94a3b8" font-family="sans-serif" font-size="9">• Power arpeggio: C-E-G-C'</text>
+      <text x="8" y="58" fill="#34d399" font-family="sans-serif" font-size="8" font-weight="700">16-bit PCM WAV generation</text>
+    </g>
+
+    <g transform="translate(10, 173)">
+      <rect width="190" height="55" rx="6" fill="#1e293b" />
+      <text x="8" y="18" fill="#f8fafc" font-family="sans-serif" font-size="10" font-weight="700">🎚️ Dynamic Normalization</text>
+      <text x="8" y="32" fill="#94a3b8" font-family="sans-serif" font-size="9">Peak limiter &amp; ADSR envelope</text>
+      <text x="8" y="46" fill="#94a3b8" font-family="sans-serif" font-size="9">Exponential decay smoothing</text>
+    </g>
+
+    <g transform="translate(10, 238)">
+      <rect width="190" height="65" rx="6" fill="rgba(52,211,153,0.08)" stroke="rgba(52,211,153,0.3)" />
+      <text x="8" y="20" fill="#34d399" font-family="sans-serif" font-size="10" font-weight="700">Verified Audio WAVs:</text>
+      <text x="8" y="36" fill="#cbd5e1" font-family="monospace" font-size="8">• moment_1_power_boot.wav</text>
+      <text x="8" y="48" fill="#cbd5e1" font-family="monospace" font-size="8">• moment_2_sonar_radar.wav</text>
+      <text x="8" y="60" fill="#cbd5e1" font-family="monospace" font-size="8">• moment_3_victory_fanfare.wav</text>
+    </g>
+  </g>
+
+  <!-- Connect Stage 4 -> Stage 5 -->
+  <path d="M 1120 300 L 1160 400" stroke="#38bdf8" stroke-width="2.5" fill="none" marker-end="url(#arrowhead)" />
+  <path d="M 1120 650 L 1160 550" stroke="#38bdf8" stroke-width="2.5" fill="none" marker-end="url(#arrowhead)" />
+
+  <!-- ==================== STAGE 5: DIRECTOR REVIEW & EXPORT ==================== -->
+  <g transform="translate(1160, 150)" filter="url(#boxShadow)">
+    <rect width="190" height="660" rx="12" fill="#0f172a" stroke="rgba(56,189,248,0.6)" stroke-width="2" />
+    <rect width="190" height="36" rx="12" fill="rgba(56,189,248,0.2)" />
+    <text x="10" y="23" fill="#38bdf8" font-family="sans-serif" font-size="11" font-weight="800">STAGE 5: EXPORT &amp; HITL</text>
+
+    <!-- Sub-block: Director Control Desk -->
+    <g transform="translate(10, 50)">
+      <rect width="170" height="150" rx="8" fill="#161f30" stroke="#38bdf8" />
+      <text x="10" y="22" fill="#38bdf8" font-family="sans-serif" font-size="11" font-weight="700">🎛️ Director Desk</text>
+      <text x="10" y="42" fill="#94a3b8" font-family="sans-serif" font-size="9">• Web Dashboard UI</text>
+      <text x="10" y="58" fill="#94a3b8" font-family="sans-serif" font-size="9">• Interactive Cue Player</text>
+      <text x="10" y="74" fill="#94a3b8" font-family="sans-serif" font-size="9">• Sticker Preview Grid</text>
+      <text x="10" y="90" fill="#94a3b8" font-family="sans-serif" font-size="9">• Script Teleprompter</text>
+      
+      <rect x="8" y="105" width="154" height="32" rx="6" fill="rgba(56,189,248,0.2)" stroke="#38bdf8" />
+      <text x="24" y="125" fill="#38bdf8" font-family="sans-serif" font-size="10" font-weight="700">✓ APPROVE / REVISE</text>
+    </g>
+
+    <!-- Sub-block: Export Production Bundle -->
+    <g transform="translate(10, 215)">
+      <rect width="170" height="235" rx="8" fill="#161f30" stroke="rgba(16,185,129,0.5)" />
+      <text x="10" y="22" fill="#10b981" font-family="sans-serif" font-size="11" font-weight="800">📦 Production Package</text>
+      
+      <g transform="translate(8, 36)">
+        <rect width="154" height="24" rx="4" fill="#1e293b" />
+        <text x="8" y="16" fill="#cbd5e1" font-family="monospace" font-size="9">📁 stickers/*.png</text>
+      </g>
+      <g transform="translate(8, 66)">
+        <rect width="154" height="24" rx="4" fill="#1e293b" />
+        <text x="8" y="16" fill="#cbd5e1" font-family="monospace" font-size="9">📁 audio/*.wav</text>
+      </g>
+      <g transform="translate(8, 96)">
+        <rect width="154" height="24" rx="4" fill="#1e293b" />
+        <text x="8" y="16" fill="#cbd5e1" font-family="monospace" font-size="9">📄 script.json</text>
+      </g>
+      <g transform="translate(8, 126)">
+        <rect width="154" height="24" rx="4" fill="#1e293b" />
+        <text x="8" y="16" fill="#cbd5e1" font-family="monospace" font-size="9">📄 script.md</text>
+      </g>
+      <g transform="translate(8, 156)">
+        <rect width="154" height="24" rx="4" fill="#1e293b" />
+        <text x="8" y="16" fill="#cbd5e1" font-family="monospace" font-size="9">📄 manifest.json</text>
+      </g>
+      <g transform="translate(8, 186)">
+        <rect width="154" height="34" rx="4" fill="rgba(16,185,129,0.2)" stroke="#10b981" />
+        <text x="14" y="18" fill="#34d399" font-family="sans-serif" font-size="10" font-weight="700">🌐 index.html</text>
+        <text x="14" y="28" fill="#a7f3d0" font-family="sans-serif" font-size="8">Standalone Web Player</text>
+      </g>
+    </g>
+
+    <!-- Sub-block: Cloud & Local Store -->
+    <g transform="translate(10, 465)">
+      <rect width="170" height="175" rx="8" fill="#1e293b" stroke="#334155" />
+      <text x="10" y="20" fill="#f8fafc" font-family="sans-serif" font-size="10" font-weight="700">🔥 State Store</text>
+      <text x="10" y="38" fill="#94a3b8" font-family="sans-serif" font-size="9">• Firestore Collection</text>
+      <text x="10" y="54" fill="#94a3b8" font-family="monospace" font-size="8">maker_tutorial_jobs</text>
+      <text x="10" y="72" fill="#94a3b8" font-family="sans-serif" font-size="9">• Local JSON Mirror</text>
+      <text x="10" y="90" fill="#94a3b8" font-family="sans-serif" font-size="9">• Cloud Run Microservice</text>
+      
+      <rect x="8" y="105" width="154" height="55" rx="4" fill="rgba(255,255,255,0.03)" />
+      <text x="12" y="122" fill="#38bdf8" font-family="sans-serif" font-size="9" font-weight="700">Status: [APPROVED]</text>
+      <text x="12" y="136" fill="#cbd5e1" font-family="sans-serif" font-size="8">Zip Bundle Generated</text>
+      <text x="12" y="150" fill="#10b981" font-family="sans-serif" font-size="8">Delivery Complete</text>
+    </g>
+  </g>
+
+  <!-- ==================== RESIDUAL REVISION FEEDBACK LOOP ==================== -->
+  <g transform="translate(0, 830)">
+    <!-- Bottom Residual Feedback Arc -->
+    <path d="M 1250 0 L 1250 50 L 740 50 L 740 -20" stroke="#fbbf24" stroke-width="2.5" stroke-dasharray="8,6" fill="none" marker-end="url(#arrowYellow)" />
+    
+    <rect x="830" y="35" width="320" height="30" rx="6" fill="#1e293b" stroke="#fbbf24" stroke-width="1.5" />
+    <text x="845" y="55" fill="#fbbf24" font-family="sans-serif" font-size="11" font-weight="700">🔄 Residual HITL Feedback: Delta prompt re-runs Script &amp; Cues</text>
+  </g>
+</svg>
