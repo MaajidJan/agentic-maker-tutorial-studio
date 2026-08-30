@@ -18,6 +18,79 @@
 
 ---
 
+## 🏛️ System Architecture & Multi-Agent Flowchart
+
+```mermaid
+flowchart TD
+    subgraph Layer1 ["1. Ingestion Layer"]
+        Media["📷 Raw Project Media<br/>(Photos & Video Clips)"]
+        UserPrompt["💬 Creative Goal Prompt<br/>(e.g., 'AOT / Anime Style for 10yo')"]
+    end
+
+    subgraph Layer2 ["2. Autonomous Multi-Agent Core (Gemini 3.5 Flash)"]
+        direction TB
+        Analyzer["🔍 Multimodal Analyzer Agent<br/>• Circuit & Component Inspection<br/>• Kid-Friendly Analogies<br/>• Key Reaction Moments Detection"]
+        
+        Scriptwriter["✍️ Scriptwriter & Storyboard Director<br/>• Engaging Video Scriptwriting<br/>• Inline [SFX] & [REACTION] Cues<br/>• Timestamps & Speaking Cues"]
+        
+        subgraph ParallelGen ["Parallel Asset Synthesis"]
+            direction LR
+            StickerAgent["🎨 Reaction Sticker Engine<br/>• Web Image Retrieval<br/>• Alpha Dilation & White Die-Cut<br/>• Drop Shadow & Emotion Badges"]
+            SoundAgent["🔊 Sound Designer Agent<br/>• Freesound Search API<br/>• 44.1kHz 16-bit WAV Synthesizer<br/>• Radar Pings & Fanfares"]
+        end
+    end
+
+    subgraph Layer3 ["3. State Persistence & Cloud Memory"]
+        Firestore[("🔥 Google Cloud Firestore / Local Mirror<br/>• Job State & Asset Snapshots<br/>• Asynchronous Event Bus")]
+    end
+
+    subgraph Layer4 ["4. Human-in-the-Loop Director Control"]
+        DirectorUI["🎛️ Live Director Dashboard & CLI<br/>• Teleprompter Preview<br/>• Interactive Cue & Audio Player<br/>• Sticker Visual Inspector"]
+        FeedbackChoice{"Director Review"}
+        RevisionPrompt["📝 Natural Language Feedback<br/>(e.g., 'Make radar joke punchier')"]
+    end
+
+    subgraph Layer5 ["5. Production Bundle Exporter"]
+        FinalBundle["📦 Complete Tutorial Production Package<br/>├── script.json & manifest.json<br/>├── teleprompter_script.md<br/>├── stickers/ (*.png)<br/>├── audio/ (*.wav)<br/>└── index.html (Interactive Player)"]
+    end
+
+    %% Flow Connections
+    Media & UserPrompt --> Analyzer
+    Analyzer -->|"State: Components & Moments"| Scriptwriter
+    Scriptwriter -->|"State: Script with Inline Cues"| ParallelGen
+    ParallelGen -->|"State: Sticker PNGs & Audio WAVs"| Firestore
+    Firestore --> DirectorUI
+    DirectorUI --> FeedbackChoice
+    FeedbackChoice -- "Needs Changes" --> RevisionPrompt --> Scriptwriter
+    FeedbackChoice -- "Approve" --> FinalBundle
+```
+
+---
+
+## 🔄 End-to-End Pipeline State Lifecycle
+
+```mermaid
+stateDiagram-v2
+    [*] --> PENDING: User uploads media & enters goal
+    PENDING --> ANALYZING: Multimodal Analyzer Agent kicks off
+    ANALYZING --> SCRIPTING: Gemini 3.5 Flash extracts components & key moments
+    SCRIPTING --> GENERATING_ASSETS: Teleprompter script written with [SFX] & [REACTION] tags
+    
+    state GENERATING_ASSETS {
+        [*] --> FetchStickers: Formulate search queries & apply die-cut borders
+        [*] --> SynthesizeAudio: Generate 44.1kHz procedural audio waveforms
+        FetchStickers --> DoneAssets
+        SynthesizeAudio --> DoneAssets
+    }
+    
+    GENERATING_ASSETS --> AWAITING_APPROVAL: Assets ready in Director preview desk
+    AWAITING_APPROVAL --> REVISING: Director submits feedback notes
+    REVISING --> SCRIPTING: Re-runs pipeline with director constraints
+    AWAITING_APPROVAL --> APPROVED: Director clicks Approve
+    APPROVED --> EXPORTED: PackageExporter generates timestamped bundle & web player
+    EXPORTED --> [*]
+```
+
 ## 🚀 Quick Start & Local Execution
 
 ### 1. Prerequisites & Environment Setup
